@@ -1,0 +1,83 @@
+/**
+ * @name Fix The Fucking Icons
+ * @description Just fixed the fucking icons
+ * @author TheDylanator
+ * @version 1.8
+ */
+
+/* Role badge container - force flex row, preserve max width */
+.role_af3987,
+div.role_af3987.hasRemoveButton_af3987 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    max-width: 268px !important;
+}
+
+/* Make icon wrapper transparent to flex (so img acts direct) */
+.role_af3987 span:has(> img.roleIcon_af3987),
+.role_af3987 span:has(> img.roleIcon_ee71ee) {
+    display: contents !important;
+}
+
+/* 1. Color dot FIRST */
+.role_af3987 .roleCircle__4f569 {
+    order: 1 !important;
+    display: block !important;
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+}
+
+/* 2. Icon SECOND - tight spacing to color dot */
+.role_af3987 img.roleIcon_ee71ee,
+.role_af3987 img.roleIcon_af3987 {
+    order: 2 !important;
+    margin: 0 1px 0 -2px !important;  /* pulls icon closer to dot; increase to -2px if you want even tighter */
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px !important;
+    border-radius: 0 !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
+/* 3. Name THIRD */
+.role_af3987 .roleName_af3987,
+.role_af3987 div.text-xs\/normal_cf4812.roleName_af3987,
+.role_af3987 [data-text-variant="text-xs/normal"] {
+    order: 3 !important;
+    flex-grow: 1 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* X button LAST - push to right edge, no negative margins */
+.role_af3987 .removeButton_af3987 {
+    margin-left: -5px !important;     /* pushes it to the far right */
+    margin-right: 0 !important;       /* reset any negative pull */
+    order: 4 !important;              /* explicit fallback to be after name */
+    flex-shrink: 0 !important;
+}
+
+/* Hidden accessibility text */
+.role_af3987 .hiddenVisually_b18fe2 {
+    display: none !important;
+}
+
+/* Prevent squishing */
+.role_af3987 > * {
+    flex-shrink: 0 !important;
+}
+
+/* Square icons elsewhere if desired */
+[class*="roleIcon-"],
+img[src*="cdn.discordapp.com/role-icons"] {
+    border-radius: 0 !important;
+}
