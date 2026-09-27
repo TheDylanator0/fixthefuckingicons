@@ -2,7 +2,7 @@
  * @name Fix The Fucking Icons
  * @description Just fixed the fucking icons
  * @author TheDylanator
- * @version 1.8
+ * @version 1.9
  */
 
 .role_af3987,
@@ -14,10 +14,14 @@ div.role_af3987.hasRemoveButton_af3987 {
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     max-width: 268px !important;
+    padding-left: 6px !important;
+    box-sizing: border-box !important;
 }
 
-.role_af3987 span:has(> img.roleIcon_af3987),
-.role_af3987 span:has(> img.roleIcon_ee71ee) {
+/* flatten BOTH wrapper levels so the <img> becomes an actual flex item */
+.role_af3987 span.roleIcon_af3987,
+.role_af3987 span.roleIcon_af3987 > span:has(> img.roleIcon_af3987),
+.role_af3987 span.roleIcon_af3987 > span:has(> img.roleIcon_ee71ee) {
     display: contents !important;
 }
 
@@ -29,21 +33,25 @@ div.role_af3987.hasRemoveButton_af3987 {
     min-width: 12px !important;
     border-radius: 50% !important;
     flex-shrink: 0 !important;
+    margin: 0 0 0 0.5px !important;
 }
 
+/* 2. icon, right after the dot */
 .role_af3987 img.roleIcon_ee71ee,
 .role_af3987 img.roleIcon_af3987 {
     order: 2 !important;
-    margin: 0 1px 0 -2px !important; 
-    width: 12px !important;
-    height: 12px !important;
-    min-width: 12px !important;
+    margin: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 1px !important;
+    min-width: 16px !important;
     border-radius: 0 !important;
     object-fit: contain !important;
     flex-shrink: 0 !important;
     display: block !important;
 }
 
+/* 3. role name */
 .role_af3987 .roleName_af3987,
 .role_af3987 div.text-xs\/normal_cf4812.roleName_af3987,
 .role_af3987 [data-text-variant="text-xs/normal"] {
@@ -53,10 +61,10 @@ div.role_af3987.hasRemoveButton_af3987 {
     white-space: nowrap !important;
 }
 
+/* 4. remove button, always last */
 .role_af3987 .removeButton_af3987 {
-    margin-left: -5px !important;
-    margin-right: 0 !important;
     order: 4 !important;
+    margin: 0 !important;
     flex-shrink: 0 !important;
 }
 
